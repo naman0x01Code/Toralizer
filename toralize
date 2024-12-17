@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+	echo "USAGE: ./toralize curl http://<host>"
+	exit 1
+
+fi
+
+export LD_PRELOAD=./toralizer.so
+${@}
+unset LD_PRELOAD
+
+
+/* 01101110 01100001 01101101 01100001 01101110 00110000 01111000 00110000 00110001 01000011 01101111 01100100 01100101 */
